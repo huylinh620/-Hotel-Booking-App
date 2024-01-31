@@ -7,6 +7,7 @@ import authRoutes from "./routes/auth"
 import myHotelRoutes from "./routes/my-hotels"
 import cookieParser from "cookie-parser"
 import {v2 as cloudinary} from "cloudinary"
+import path from 'path'
 
 cloudinary.config({
   cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
@@ -29,9 +30,15 @@ app.get('/api/test',async (req: Request, res: Response) => {
     res.json({message: 'hello from express endpoint!'})
 })
 
+app.use(express.static(path.join(__dirname, "../../frontend/dist")))
+
 app.use("/api/auth", authRoutes)
 app.use("/api/users", userRoutes)
 app.use("/api/my-hotels", myHotelRoutes)
+
+app.get('*',async (req: Request, res: Response) => {
+  res.sendFile(path.join(__dirname, '../../frontend/dist/index.html'))
+})
 
 app.listen(7000, () => {
     console.log('app running')
