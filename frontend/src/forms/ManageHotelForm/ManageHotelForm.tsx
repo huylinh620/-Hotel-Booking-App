@@ -19,7 +19,7 @@ export type HotelFormData = {
 
 type Props = {
   onSave: (hotelFormData: FormData) => void;
-  isLoading: false
+  isLoading: boolean;
 }
 
 export const ManageHotelForm = ({onSave, isLoading}: Props) => {
