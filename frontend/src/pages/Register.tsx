@@ -12,7 +12,7 @@ export type RegisterFormData = {
   confirmPassword: string,
 }
 
-const Register = () => {
+export const Register = () => {
   const queryClient = useQueryClient();
   const navigate = useNavigate()
   const { showToast } = useAppContext()
@@ -121,5 +121,3 @@ const Register = () => {
     </form>
   )
 }
-
-export default Register;

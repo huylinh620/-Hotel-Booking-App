@@ -9,8 +9,6 @@ export const MyHotels = () => {
     onError: () => {}
   })
 
-  console.log(hotelData)
-
   if (!hotelData) {
     return <span>No Hotels found</span>;
   }
@@ -64,5 +62,3 @@ export const MyHotels = () => {
     </div>
   )
 }
-
-export default MyHotels

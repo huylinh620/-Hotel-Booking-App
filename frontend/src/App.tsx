@@ -5,10 +5,7 @@ import {
   Routes,
 } from "react-router-dom";
 import Layout from "./layouts/Layout";
-import Register from './pages/Register';
-import SignIn from './pages/SignIn';
-import AddHotel from './pages/AddHotel';
-import MyHotels from './pages/MyHotels';
+import {Register, SignIn, AddHotel, MyHotels, EditHotel} from './pages/';
 import { useAppContext } from "./contexts/AppContext";
 
 const App = () => {
@@ -59,13 +56,21 @@ const App = () => {
                 }
               />
               <Route
-              path="/my-hotels"
-              element={
-                <Layout>
-                  <MyHotels />
-                </Layout>
-              }
-            />
+                path="/my-hotels"
+                element={
+                  <Layout>
+                    <MyHotels />
+                  </Layout>
+                }
+              />
+              <Route
+                path="/edit-hotel/:hotelId"
+                element={
+                  <Layout>
+                    <EditHotel />
+                  </Layout>
+                }
+              />
           </>
           )}
       </Routes>

@@ -9,7 +9,7 @@ export type SignInFormData = {
   password: string;
 };
 
-const SignIn = () => {
+export const SignIn = () => {
   const { showToast } = useAppContext();
   const navigate = useNavigate();
   const queryClient = useQueryClient();
@@ -85,6 +85,3 @@ const SignIn = () => {
     </form>
   );
 };
-
-export default SignIn;
-    

@@ -3,7 +3,7 @@ import { ManageHotelForm } from "../forms/ManageHotelForm/ManageHotelForm"
 import { useAppContext } from "../contexts/AppContext"
 import * as apiClient from "../api-client"
 
-const AddHotel = () => {
+export const AddHotel = () => {
   const {showToast} = useAppContext()
   const { mutate, isLoading } = useMutation(apiClient.addMyHotel, {
     onSuccess: () => {
@@ -22,5 +22,3 @@ const AddHotel = () => {
     <ManageHotelForm onSave={handleSave} isLoading={isLoading}  />
   )
 }
-
-export default AddHotel
