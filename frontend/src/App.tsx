@@ -5,7 +5,7 @@ import {
   Routes,
 } from "react-router-dom";
 import Layout from "./layouts/Layout";
-import {Register, SignIn, AddHotel, MyHotels, EditHotel} from './pages/';
+import {Register, SignIn, AddHotel, MyHotels, EditHotel, Search} from './pages/';
 import { useAppContext } from "./contexts/AppContext";
 
 const App = () => {
@@ -25,7 +25,7 @@ const App = () => {
             path="/search"
             element={
               <Layout>
-                <p>Search page</p>
+                <Search />
               </Layout>
             }
           />
