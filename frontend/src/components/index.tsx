@@ -12,3 +12,4 @@ export * from "./PriceFilter";
 export * from "./StarRatingFilter";
 export * from "./Pagination";
 export * from "./SearchResultsCard";
+export * from "./BookingDetailsSummary";
